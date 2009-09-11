@@ -6,10 +6,18 @@ namespace Machine.Migrations
 	public class MigrationAttribute : Attribute
 	{
 		private short version;
+		private string scope;
 
-		public MigrationAttribute(short version)
+		public MigrationAttribute(short version, string scope)
 		{
 			this.version = version;
+			this.scope = scope;
+		}
+
+		public string Scope
+		{
+			get { return scope; }
+			set { scope = value; }
 		}
 
 		public short Version
